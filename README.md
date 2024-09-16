@@ -41,7 +41,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github repository solution URL here](https://github.com/hadodev/FourCardFeatureSection)
-- Live Site URL: [Live site URL here](https://hadodev-frontendmentor-FourCardFeature.netlify.app/)
+- Live Site URL: [Live site URL here](https://hadodev-frontendmentor-4cardfeature.netlify.app/)
 
 ## My process
 
