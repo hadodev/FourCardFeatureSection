@@ -1,0 +1,178 @@
+@import url(_font.css);
+@import url(_reset.css);
+
+:root {
+    /* fonts */
+    --fw-thin: 200;
+    --fw-regular: 500;
+    --fw-bold: 600;
+
+    /* fonts sizes */
+    /* Step -2: 12.5px → 12.8px */
+    --fs-step--2: clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem);
+    /* Step -1: 15px → 16px */
+    --fs-step--1: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
+    /* Step 0: 18px → 20px */
+    --fs-step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+    /* Step 1: 21.6px → 25px */
+    --fs-step-1: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
+    /* Step 2: 25.92px → 31.25px */
+    --fs-step-2: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
+    /* Step 3: 31.104px → 39.0625px */
+    --fs-step-3: clamp(1.944rem, 1.771rem + 0.8651vw, 2.4414rem);
+    /* Step 4: 37.3248px → 48.8281px */
+    --fs-step-4: clamp(2.3328rem, 2.0827rem + 1.2504vw, 3.0518rem);
+    /* Step 5: 44.7898px → 61.0352px */
+    --fs-step-5: clamp(2.7994rem, 2.4462rem + 1.7658vw, 3.8147rem);
+
+    /* colors */
+    /* ### Primary */
+    --clr-primary-red: hsl(0, 78%, 62%);
+    --clr-primary-cyan: hsl(180, 62%, 55%);
+    --clr-primary-orange: hsl(34, 97%, 64%);
+    --clr-primary-blue: hsl(212, 86%, 64%);
+    /* ### Neutral */
+    --clr-neutral-very-dark-blue: hsl(234, 12%, 34%);
+    --clr-neutral-grayish-blue: hsl(229, 6%, 66%);
+    --clr-neutral-very-light-gray: hsl(0, 0%, 98%);
+}
+
+body {
+    display: grid;
+    margin: 1em;
+
+    color: var(--clr-neutral-very-dark-blue);
+
+    font-weight: var(--fw-regular);
+    font-size: var(--fs-step--1);
+    font-family: "Poppins", sans-serif;
+    
+    background: var(--clr-neutral-very-light-gray);
+
+    place-items: center;
+}
+
+
+.container {
+    width: clamp(350px, 70vw, 120ch);
+
+    container-type: inline-size;
+
+    h1 {
+        font-weight: 200;
+        font-size: var(--fs-step-2);
+    }
+    h2 {
+        font-weight: 600;
+        font-size: var(--fs-step-2);
+    }
+    h3 {
+        font-weight: 600;
+        font-size: var(--fs-step-0);
+        margin-block-start: 0;
+    }
+    p {
+        color: var(--clr-neutral-grayish-blue);
+        font-weight: 400;
+    }
+
+    .container__title {
+        margin-block-end: 4em;
+        margin-inline: auto;
+
+        text-align: center;
+
+        h2 {
+            margin-block-start: .3em;
+            margin-block-end: .8em;
+        }
+
+        p {
+            max-width: 50ch;
+            margin-inline: auto;
+
+            text-align: center;
+        }
+    }
+
+    .cards {
+        display: grid;
+        grid-auto-rows: auto;
+        grid-template-columns: repeat(auto-fit, minmax(35ch, 1fr));
+        gap: 2em;
+        place-items: center;
+        justify-content: center;
+    }
+
+    .card {
+        --border-color: var(--clr-primary-blue, gray);
+
+        display: grid;
+        padding: 2em;
+
+        border-top: .3em solid var(--border-color);
+        border-radius: .4em;
+
+        box-shadow: 0 .5em 1em var(--clr-neutral-grayish-blue);
+
+        transition: 500ms;
+
+        img {
+            margin-block-start: 2em;
+
+            justify-self: end;
+        }
+
+        p {
+            max-width: 30ch;
+        }
+    }
+
+    .card__supervisor {
+        --border-color: var(--clr-primary-cyan, gray);
+    }
+
+    .card__teamBuilder {
+        --border-color: var(--clr-primary-red, gray);
+    }
+
+    .card__karma {
+        --border-color: var(--clr-primary-orange, gray);
+    }
+
+    .card__calculator {
+        --border-color: var(--clr-primary-blue, gray);
+    }
+
+    
+}
+
+@container (min-width: 100ch) {
+    .cards {
+        grid-auto-columns: max-content;
+
+        .card {
+            transition: 5s;
+        }
+
+        .card__supervisor {
+            grid-row: 2 / 4;
+            grid-column: 1 / 1;
+        }
+
+        .card__teamBuilder {
+            grid-row: 2 / 3;
+            grid-column: 2 / 3;
+        }
+
+        .card__karma {
+            grid-row: 3 / 4;
+            grid-column: 2 / 3;
+        }
+
+        .card__calculator {
+            grid-row: 2 / 4;
+            grid-column: 3;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+.poppins-extralight {
+  font-weight: 200;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
